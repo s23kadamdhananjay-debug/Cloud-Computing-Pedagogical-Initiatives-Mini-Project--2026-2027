@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cognitive Games — CloudBox</title>
+  <meta name="description" content="Twelve browser-based cognitive mini-games across two tracks, with instant scoring and a performance dashboard." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="games">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CloudBox home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+          </svg>
+        </span>
+        <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Dashboard</a>
+        <a href="storage.html" data-nav="storage">Cloud Storage</a>
+        <a href="games.html" data-nav="games">Cognitive Games</a>
+        <a href="team.html" data-nav="team">Team</a>
+        <a class="btn btn-primary btn-sm" href="storage.html">Open CloudBox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Cognitive Games Arena</span>
+        <h1>Twelve games. Two tracks.<br /><span class="grad">One performance index.</span></h1>
+        <p>
+          Short, browser-based exercises for attention, memory, numerical reasoning and
+          rule-switching. Pick any game, play five rounds, and watch your analytics update.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="analytics-strip">
+          <div class="stat-card panel">
+            <div class="label"><span>Sessions Played</span><span>🎮</span></div>
+            <strong id="statPlays">0</strong>
+            <small>completed game sessions</small>
+          </div>
+          <div class="stat-card panel">
+            <div class="label"><span>Average Index</span><span>📈</span></div>
+            <strong id="statAvg">—</strong>
+            <small>across your last 20 sessions</small>
+          </div>
+          <div class="stat-card panel">
+            <div class="label"><span>Games Available</span><span>🧠</span></div>
+            <strong id="statGames">12</strong>
+            <small>across two tracks</small>
+          </div>
+        </div>
+
+        <div class="track-block">
+          <div class="track-head">
+            <h2>Track 1 · Cognitive Aptitude</h2>
+            <span class="badge cyan">6 games</span>
+            <p>Numerical reasoning, sequencing, memory and visual logic.</p>
+          </div>
+          <div class="games-grid" id="track1Grid"></div>
+        </div>
+
+        <div class="track-block">
+          <div class="track-head">
+            <h2>Track 2 · Game-Based Assessment</h2>
+            <span class="badge violet">6 games</span>
+            <p>Attention, working memory, reaction speed and rule-switching.</p>
+          </div>
+          <div class="games-grid" id="track2Grid"></div>
+        </div>
+
+        <div class="panel" style="padding: 22px; display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;">
+          <div style="font-size: 1.4rem;">💡</div>
+          <div style="flex: 1; min-width: 240px;">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">How the performance index works</h3>
+            <p class="muted small">
+              Every game runs five quick rounds. Your index is the percentage of rounds you solve,
+              weighted by speed and accuracy depending on the task. Results and personal bests are
+              stored only in this browser using localStorage.
+            </p>
+          </div>
+          <a class="btn btn-sm" href="team.html">About the project →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Game modal -->
+  <div class="modal" id="gameModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+      <header class="modal-head">
+        <div>
+          <span class="badge cyan" id="gameTrack">Track 1</span>
+          <h3 id="gameTitle">Game</h3>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Close game">✕</button>
+      </header>
+
+      <div class="game-hud">
+        <span id="hudRound">Round 1 / 5</span>
+        <span id="hudScore">Score 0</span>
+      </div>
+
+      <div class="game-stage" id="gameStage"></div>
+      <p class="game-hint" id="gameHint"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+            </svg>
+          </span>
+          <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+        </a>
+        <p>A quota-aware storage dashboard and a twelve-game cognitive arena, built for the Cloud Computing mini project.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="storage.html">Cloud Storage</a>
+        <a href="games.html">Cognitive Games</a>
+        <a href="team.html">Team &amp; Report</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <p class="small muted">Department of Computer Science &amp; Engineering<br />
+        MGM's College of Engineering, Nanded<br />
+        Academic Year 2026-27</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span class="js-year">2026</span> Team CloudBox · Academic use only.</span>
+      <span>Guide: Dr. S. Y. Gaikwad</span>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="container" style="padding: 20px 0;">JavaScript is required to play the games.</p>
+  </noscript>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/games.js"></script>
+</body>
+</html>

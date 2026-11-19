@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team &amp; Report — CloudBox</title>
+  <meta name="description" content="Project team, guide, report and presentation for the CloudBox Cloud Computing mini project, MGM's College of Engineering, Nanded." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%81%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="team">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CloudBox home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+          </svg>
+        </span>
+        <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Dashboard</a>
+        <a href="storage.html" data-nav="storage">Cloud Storage</a>
+        <a href="games.html" data-nav="games">Cognitive Games</a>
+        <a href="team.html" data-nav="team">Team</a>
+        <a class="btn btn-primary btn-sm" href="storage.html">Open CloudBox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Team &amp; Documentation</span>
+        <h1>Built by four students.<br /><span class="grad">Guided by one mentor.</span></h1>
+        <p>
+          Cloud Computing mini project · B.Tech Computer Science &amp; Engineering ·
+          Mahatma Gandhi Mission's College of Engineering, Nanded · Academic Year 2026-27.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="team-grid">
+          <article class="member reveal">
+            <div class="avatar">DK</div>
+            <h3>Dhananjay Kadam</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 133</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">PG</div>
+            <h3>Prajwal Govande</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 126</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">BG</div>
+            <h3>Bramanand Gaikwad</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 165</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">VS</div>
+            <h3>Virbhadra Sakarge</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 148</span>
+          </article>
+        </div>
+
+        <div class="guide-card reveal">
+          <div class="avatar">SG</div>
+          <div>
+            <span class="eyebrow">Project guide</span>
+            <h3 style="margin-top: 4px;">Dr. S. Y. Gaikwad</h3>
+            <p>Department of Computer Science &amp; Engineering, MGM's College of Engineering, Nanded.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">The project</span>
+            <h2>What we set out to build</h2>
+          </div>
+          <p>A browser-based cloud storage prototype, paired with a cognitive game arena that demonstrates client-side state and scoring.</p>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <h3>📋 Project at a glance</h3>
+            <ul>
+              <li><strong>Title:</strong> CloudBox — Cloud Storage System &amp; Cognitive Games</li>
+              <li><strong>Type:</strong> Frontend mini project (HTML, CSS, JavaScript)</li>
+              <li><strong>Department:</strong> Computer Science &amp; Engineering</li>
+              <li><strong>College:</strong> MGM's College of Engineering, Nanded</li>
+              <li><strong>University:</strong> Dr. Babasaheb Ambedkar Technological University, Lonere</li>
+              <li><strong>Academic year:</strong> 2026-27</li>
+            </ul>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>📝 Abstract</h3>
+            <p>
+              CloudBox is a browser-based application that demonstrates two sides of a modern
+              cloud project. The storage module lets a user select files, view them in a
+              searchable list and manage a simulated 100 MB quota with live statistics. The
+              cognitive module provides twelve short games across two tracks — Cognitive
+              Aptitude and Game-Based Assessment — with immediate scoring and a performance
+              dashboard. All data stays in the browser: file metadata and game results are
+              persisted with localStorage, and no server or database is required.
+            </p>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>🎯 Objectives</h3>
+            <ul>
+              <li>Build a clean cloud-style dashboard with a responsive layout.</li>
+              <li>Allow selection of multiple local files and validate a 100 MB quota.</li>
+              <li>Display file count, used storage, free storage and a progress bar.</li>
+              <li>Support filename search and removal of file entries.</li>
+              <li>Organise twelve mini-games into two clearly identified tracks.</li>
+              <li>Show scores and a performance index immediately after play.</li>
+            </ul>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>🚀 Future scope</h3>
+            <ul>
+              <li>Connect the dashboard to a Node.js or Python backend.</li>
+              <li>Store real files in cloud object storage such as Amazon S3.</li>
+              <li>Add user accounts, authentication and access control.</li>
+              <li>Keep scores and files in a cloud database for cross-device access.</li>
+              <li>Add preview, download, sharing, encryption and audit logs.</li>
+              <li>Introduce leaderboards and adaptive difficulty for the games.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Documentation</span>
+            <h2>Report &amp; presentation</h2>
+          </div>
+          <p>The original submission files, bundled with the repository.</p>
+        </div>
+
+        <div class="doc-grid">
+          <a class="doc-card reveal" href="docs/Cloud_Computing_Mini_Project_Report.pdf" target="_blank" rel="noopener">
+            <span class="d-ico" aria-hidden="true">📕</span>
+            <span>
+              <strong>Project Report</strong>
+              <span>PDF · Cloud Storage System / Cognitive Games</span>
+            </span>
+            <span class="d-dl">Open ↗</span>
+          </a>
+
+          <a class="doc-card reveal" href="docs/Cloud_Computing_Mini_Project_Presentation.pptx">
+            <span class="d-ico" aria-hidden="true">📊</span>
+            <span>
+              <strong>Mini Project Presentation</strong>
+              <span>PPTX · 12 slides</span>
+            </span>
+            <span class="d-dl">Download ↓</span>
+          </a>
+        </div>
+
+        <div class="panel" style="padding: 24px; margin-top: 16px;">
+          <h3 style="font-size: 1rem; margin-bottom: 8px;">A note on the implementation</h3>
+          <p class="muted small">
+            The submitted report documents the Cloud-Based Cognitive Games build (React 19,
+            TypeScript, Vite, deployed on Vercel). This repository implements the same
+            experience as a dependency-free static site so it can be opened directly,
+            hosted on GitHub Pages, and reviewed without installing anything. The accompanying
+            presentation documents the cloud storage prototype, which is also included here as
+            the CloudBox storage module.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Explore the finished project</h2>
+            <p>Start with the storage dashboard, then try a few cognitive games.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="storage.html">Open CloudBox</a>
+            <a class="btn" href="games.html">Play a game</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+            </svg>
+          </span>
+          <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+        </a>
+        <p>A quota-aware storage dashboard and a twelve-game cognitive arena, built for the Cloud Computing mini project.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="storage.html">Cloud Storage</a>
+        <a href="games.html">Cognitive Games</a>
+        <a href="team.html">Team &amp; Report</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <p class="small muted">Department of Computer Science &amp; Engineering<br />
+        MGM's College of Engineering, Nanded<br />
+        Academic Year 2026-27</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span class="js-year">2026</span> Team CloudBox · Academic use only.</span>
+      <span>Guide: Dr. S. Y. Gaikwad</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Storage Dashboard — CloudBox</title>
+  <meta name="description" content="CloudBox cloud storage dashboard: upload files, search, delete and track a simulated 100 MB storage quota." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%81%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="storage">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CloudBox home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+          </svg>
+        </span>
+        <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Dashboard</a>
+        <a href="storage.html" data-nav="storage">Cloud Storage</a>
+        <a href="games.html" data-nav="games">Cognitive Games</a>
+        <a href="team.html" data-nav="team">Team</a>
+        <a class="btn btn-primary btn-sm" href="games.html">Play a game</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="container app-shell">
+      <!-- Sidebar -->
+      <aside class="sidebar panel">
+        <div class="side-brand">
+          <span class="cloud" aria-hidden="true">☁</span>
+          <span><strong>CloudBox</strong><small>Storage</small></span>
+        </div>
+
+        <nav class="side-nav" aria-label="Dashboard sections">
+          <a href="index.html"><span class="s-ico">⌂</span> Dashboard</a>
+          <a href="#files" class="active"><span class="s-ico">🗂</span> My Files</a>
+          <a href="#storageOverview"><span class="s-ico">📊</span> Storage</a>
+          <a href="#settings"><span class="s-ico">⚙</span> Settings</a>
+        </nav>
+
+        <div class="quota-widget">
+          <div class="q-row"><span>Quota used</span><b id="sideUsed">0 MB</b></div>
+          <div class="progress" style="height: 7px;"><span id="sideBar" style="width: 0%"></span></div>
+          <p class="hint"><span id="sideFree">100 MB</span> still available</p>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <section>
+        <div class="content-head">
+          <div>
+            <span class="eyebrow">Cloud Storage System</span>
+            <h1>Cloud Dashboard</h1>
+            <p>Select files, watch the 100 MB quota, search the list and remove entries.</p>
+          </div>
+          <button class="btn btn-primary" id="uploadBtn" type="button">⬆ Upload Files</button>
+        </div>
+
+        <!-- Summary cards -->
+        <div class="stats-grid">
+          <div class="stat-card panel">
+            <div class="label"><span>Total Files</span><span>🗂</span></div>
+            <strong id="statFiles">0</strong>
+            <small>entries in this session</small>
+          </div>
+          <div class="stat-card panel">
+            <div class="label"><span>Storage Used</span><span>⛁</span></div>
+            <strong id="statUsed">0 MB</strong>
+            <small>of 100 MB quota</small>
+          </div>
+          <div class="stat-card panel">
+            <div class="label"><span>Available</span><span>✓</span></div>
+            <strong id="statFree">100 MB</strong>
+            <small>ready for new files</small>
+          </div>
+        </div>
+
+        <!-- Storage overview -->
+        <section class="storage-panel panel" id="storageOverview" aria-labelledby="storageTitle">
+          <div class="s-head">
+            <h2 id="storageTitle">Storage Overview</h2>
+            <span class="pct" id="storagePct">0%</span>
+          </div>
+          <div class="progress" id="storageProgress" role="progressbar" aria-labelledby="storageTitle" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span id="storageBar" style="width: 0%"></span>
+          </div>
+          <div class="progress-legend">
+            <span id="legendUsed">0 MB used</span>
+            <span id="legendFree">100 MB free</span>
+          </div>
+        </section>
+
+        <!-- Files -->
+        <section class="files-panel panel" id="files" aria-labelledby="filesTitle">
+          <div class="files-toolbar">
+            <h2 id="filesTitle">My Files <span class="badge" id="filesCount">0</span></h2>
+
+            <label class="search-box" for="searchInput">
+              <span aria-hidden="true">🔍</span>
+              <input type="search" id="searchInput" placeholder="Search by filename…" autocomplete="off" />
+            </label>
+
+            <button class="btn btn-danger btn-sm" id="clearAll" type="button" title="Remove every file">Clear all</button>
+          </div>
+
+          <div class="dropzone" id="dropzone">
+            <p class="dz-title">Drag &amp; drop files here</p>
+            <p>or use the browser file picker — multiple selection supported</p>
+            <button class="btn btn-sm" id="browseBtn" type="button">Browse files</button>
+          </div>
+
+          <div class="file-list" id="fileList" aria-live="polite"></div>
+
+          <div class="empty-state" id="emptyState">
+            <div class="e-ico">☁️</div>
+            <h3>No files yet</h3>
+            <p>Upload something to see the dashboard update.</p>
+          </div>
+
+          <p class="small muted" style="padding: 14px 20px; border-top: 1px solid rgba(148,163,216,.09);">
+            ℹ️ Demo mode: file names and sizes are saved in this browser. File contents are never uploaded.
+          </p>
+        </section>
+
+        <!-- Settings -->
+        <section class="settings-panel panel" id="settings">
+          <div>
+            <h3>Demo settings</h3>
+            <p>Clear the saved file list and return the quota to 100 MB.</p>
+          </div>
+          <button class="btn btn-sm" id="resetBtn" type="button">↺ Reset storage data</button>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+            </svg>
+          </span>
+          <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+        </a>
+        <p>A quota-aware storage dashboard and a twelve-game cognitive arena, built for the Cloud Computing mini project.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="storage.html">Cloud Storage</a>
+        <a href="games.html">Cognitive Games</a>
+        <a href="team.html">Team &amp; Report</a>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <p class="small muted">Department of Computer Science &amp; Engineering<br />
+        MGM's College of Engineering, Nanded<br />
+        Academic Year 2026-27</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span class="js-year">2026</span> Team CloudBox · Academic use only.</span>
+      <span>Guide: Dr. S. Y. Gaikwad</span>
+    </div>
+  </footer>
+
+  <input type="file" id="fileInput" multiple hidden />
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript>
+    <p class="container" style="padding: 20px 0;">JavaScript is required for the storage dashboard.</p>
+  </noscript>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/storage.js"></script>
+</body>
+</html>

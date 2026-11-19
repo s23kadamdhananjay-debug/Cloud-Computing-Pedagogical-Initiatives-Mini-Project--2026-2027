@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudBox — Cloud Computing Mini Project 2026-27</title>
+  <meta name="description" content="CloudBox is a Cloud Computing mini project combining a quota-aware cloud storage dashboard with a twelve-game cognitive arena." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%81%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="CloudBox home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>CloudBox</strong>
+          <small>Cloud Computing Mini Project</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav">☰</button>
+
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Dashboard</a>
+        <a href="storage.html" data-nav="storage">Cloud Storage</a>
+        <a href="games.html" data-nav="games">Cognitive Games</a>
+        <a href="team.html" data-nav="team">Team</a>
+        <a class="btn btn-primary btn-sm" href="storage.html">Open CloudBox</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Mini Project · 2026-27</span>
+          <h1>Two cloud builds.<br />One <span class="grad">polished</span> interface.</h1>
+          <p class="hero-lead">
+            CloudBox combines a quota-aware cloud storage dashboard with a twelve-game
+            cognitive arena — a single browser project built for the Cloud Computing
+            mini project at MGM's College of Engineering, Nanded.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="storage.html">☁ Open CloudBox</a>
+            <a class="btn" href="games.html">🧠 Explore the games</a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="dot"></i> Runs fully in the browser</span>
+            <span>✦ No build step required</span>
+            <span>⛁ 100 MB simulated quota</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-chip one"><span class="ico">🧠</span> 12 cognitive games</div>
+          <div class="console">
+            <div class="console-top">
+              <div class="console-dots"><i></i><i></i><i></i></div>
+              <span class="console-title">cloudbox / dashboard</span>
+            </div>
+
+            <div class="quota-card">
+              <div class="quota-line"><span>Storage used</span><strong>34 MB <span class="muted small">/ 100 MB</span></strong></div>
+              <div class="progress"><span style="width:34%"></span></div>
+              <div class="progress-legend"><span>34% of quota</span><span>66 MB free</span></div>
+            </div>
+
+            <div class="mini-file"><span class="ico">📄</span> project-report.pdf <span class="size">2.4 MB</span></div>
+            <div class="mini-file"><span class="ico">📊</span> presentation.pptx <span class="size">8.1 MB</span></div>
+            <div class="mini-file"><span class="ico">🖼️</span> college-logo.png <span class="size">640 KB</span></div>
+          </div>
+          <div class="float-chip two"><span class="ico">⚡</span> Quota guard active</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick stats -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="stats-strip reveal">
+          <div class="stat-cell"><strong>12</strong><span>Mini games</span></div>
+          <div class="stat-cell"><strong>2</strong><span>Cognitive tracks</span></div>
+          <div class="stat-cell"><strong>100 MB</strong><span>Simulated storage quota</span></div>
+          <div class="stat-cell"><strong>4</strong><span>Team members</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">What's inside</span>
+            <h2>Two modules, one project</h2>
+          </div>
+          <p>The presentation describes the storage dashboard; the report documents the cognitive game platform. CloudBox ships both in a single, consistent interface.</p>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card card reveal">
+            <div class="module-icon">☁️</div>
+            <h3>Cloud Storage Dashboard</h3>
+            <p>The CloudBox storage prototype from the presentation: upload, search, manage and watch your 100 MB quota in real time.</p>
+            <ul class="module-list">
+              <li>Select or drag in multiple files at once</li>
+              <li>Live quota calculation with a warning state</li>
+              <li>Filename search and one-click delete</li>
+              <li>Metadata kept in localStorage between visits</li>
+            </ul>
+            <a class="link-arrow" href="storage.html">Open storage dashboard <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="module-card violet card reveal">
+            <div class="module-icon">🧠</div>
+            <h3>Cognitive Games Arena</h3>
+            <p>Twelve short browser games across two tracks, with instant feedback and a performance dashboard — the project described in the report.</p>
+            <ul class="module-list">
+              <li>Six Cognitive Aptitude games</li>
+              <li>Six Game-Based Assessment games</li>
+              <li>Scoring, performance index and saved bests</li>
+              <li>Keyboard-friendly, fully client-side</li>
+            </ul>
+            <a class="link-arrow" href="games.html">Enter the arena <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Built for the demo</span>
+            <h2>Small project, complete workflow</h2>
+          </div>
+          <p>Every feature maps to a concept from the Cloud Computing syllabus: quota management, client-side storage, and a frontend deployed as static cloud hosting.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature reveal">
+            <span class="f-ico">🛡️</span>
+            <h4>Quota guard</h4>
+            <p>Every upload is checked against the 100 MB limit before it is accepted.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="f-ico">🔍</span>
+            <h4>Search &amp; manage</h4>
+            <p>Filter by filename, remove entries, or reset the demo with one click.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="f-ico">📈</span>
+            <h4>Live analytics</h4>
+            <p>File count, used space, free space and progress update instantly.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="f-ico">📱</span>
+            <h4>Responsive</h4>
+            <p>The dashboard and games adapt from wide desktop screens down to phones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stack + report -->
+    <section class="section">
+      <div class="container">
+        <div class="module-grid">
+          <div class="panel reveal" style="padding: 28px;">
+            <span class="eyebrow">Technology stack</span>
+            <h2 style="margin: 10px 0 16px; font-size: 1.5rem;">Dependency-free and easy to grade</h2>
+            <div class="chip-row">
+              <span class="chip"><b>HTML5</b> structure</span>
+              <span class="chip"><b>CSS3</b> layout</span>
+              <span class="chip"><b>JavaScript</b> ES6</span>
+              <span class="chip"><b>localStorage</b> persistence</span>
+              <span class="chip"><b>GitHub Pages</b> hosting</span>
+              <span class="chip"><b>Vercel</b> (report reference)</span>
+            </div>
+            <p class="small muted" style="margin-top: 18px;">
+              The submitted report describes a React 19 + TypeScript build deployed on Vercel.
+              This repository re-implements the experience as a dependency-free static site so it
+              can be opened, reviewed and hosted without a build step.
+            </p>
+          </div>
+
+          <div class="panel reveal" style="padding: 28px; display: flex; flex-direction: column; justify-content: center;">
+            <span class="eyebrow">Documentation</span>
+            <h2 style="margin: 10px 0 8px; font-size: 1.5rem;">Report &amp; presentation</h2>
+            <p class="muted" style="font-size: 0.9rem;">The original submission documents are bundled in <code>docs/</code> and linked from the team page.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px;">
+              <a class="btn btn-primary" href="docs/Cloud_Computing_Mini_Project_Report.pdf" target="_blank" rel="noopener">📕 Read the report</a>
+              <a class="btn" href="docs/Cloud_Computing_Mini_Project_Presentation.pptx">📊 Download PPT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">B.Tech CSE · 2026-27</span>
+            <h2>The project team</h2>
+          </div>
+          <p>Guided by Dr. S. Y. Gaikwad, Department of Computer Science &amp; Engineering.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="member reveal">
+            <div class="avatar">DK</div>
+            <h3>Dhananjay Kadam</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 133</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">PG</div>
+            <h3>Prajwal Govande</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 126</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">BG</div>
+            <h3>Bramanand Gaikwad</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 165</span>
+          </article>
+          <article class="member reveal">
+            <div class="avatar">VS</div>
+            <h3>Virbhadra Sakarge</h3>
+            <p class="role">Project contributor</p>
+            <span class="roll">Roll No. 148</span>
+          </article>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <a class="link-arrow" href="team.html">Full team page &amp; project details <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Ready to explore the dashboard?</h2>
+            <p>Upload a few files, watch the quota move, then switch over to the games.</p>
+          </div>
+          <a class="btn btn-primary" href="storage.html">Launch CloudBox ☁</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.5 19H7a4.5 4.5 0 0 1-.5-8.97 6 6 0 0 1 11.45-1.7A4.5 4.5 0 0 1 17.5 19Z" />
+            </svg>
+          </span>
+          <span class="brand-text"><strong>CloudBox</strong><small>Cloud Computing Mini Project</small></span>
+        </a>
+        <p>A quota-aware storage dashboard and a twelve-game cognitive arena, built for the Cloud Computing mini project.</p>
+      </div>
+
+      <div>
+        <h4>Explore</h4>
+        <a href="storage.html">Cloud Storage</a>
+        <a href="games.html">Cognitive Games</a>
+        <a href="team.html">Team &amp; Report</a>
+      </div>
+
+      <div>
+        <h4>Project</h4>
+        <p class="small muted">Department of Computer Science &amp; Engineering<br />
+        MGM's College of Engineering, Nanded<br />
+        Academic Year 2026-27</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span class="js-year">2026</span> Team CloudBox · Academic use only.</span>
+      <span>Guide: Dr. S. Y. Gaikwad</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+</body>
+</html>
