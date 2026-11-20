@@ -32,6 +32,7 @@ Built with **HTML5, CSS3 and vanilla JavaScript** — no dependencies, no build 
 | **Prajwal Govande** | 126 |
 | **Bramanand Gaikwad** | 165 |
 | **Virbhadra Sakarge** | 148 |
+| **Krishna Rathod** | 147 |
 
 ---
 
